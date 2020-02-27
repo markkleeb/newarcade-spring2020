@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3610115978150138712}
   m_Layer: 0
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   bullet: {fileID: 3707912510507441731, guid: dad5a6fb89f4d4e7cae074224a3eb675, type: 3}
-  inputVector: {x: 0, y: 0}
 --- !u!50 &5741287641182663627
 Rigidbody2D:
   serializedVersion: 4

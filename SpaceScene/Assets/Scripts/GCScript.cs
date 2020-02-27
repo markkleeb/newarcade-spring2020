@@ -10,9 +10,16 @@ public class GCScript : MonoBehaviour
     //Grab the invader object
     public GameObject invader;
 
+    public bool isDead = false;
+
+    public UnityEngine.UI.Text scoreText;
+    public int score = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        Instantiate(ship, new Vector2(0, -3), Quaternion.identity);
 
         //draw 10 invaders across
         for (int i = -5; i < 5; i++)
@@ -28,12 +35,24 @@ public class GCScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && isDead == true)
         {
             //if we press spacebar, create a new ship object
             Instantiate(ship, new Vector2(0, -3), Quaternion.identity);
+            isDead = false;
             
         }
         
+    }
+
+    public void killed()
+    {
+        isDead = true;
+    }
+
+    public void AddScore()
+    {
+        score += 1;
+        scoreText.text = "Score: " + score;
     }
 }
